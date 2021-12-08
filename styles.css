@@ -1,0 +1,13 @@
+
+
+svg{
+    height: 250px;
+    width: 280px;
+   }
+  
+  .hex {
+    stroke: #000;
+    fill:white;
+    stroke-width: 4px;
+  }
+

@@ -27,3 +27,4 @@ fetch('https://accounts.spotify.com/api/token', {
       console.log(data)
     })
   
+    
