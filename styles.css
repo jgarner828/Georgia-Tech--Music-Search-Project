@@ -1,13 +1,220 @@
+*{
+  font-family: 'Permanent Marker';
+  color: whitesmoke;
+  box-sizing: border-box;
+}
 
+body {
+  margin: 0px;
+	background-color: darkgoldenrod;
+}
 
-svg{
-    height: 250px;
-    width: 280px;
-   }
-  
-  .hex {
-    stroke: #000;
-    fill:white;
-    stroke-width: 4px;
+.jumbotron {
+  display: flex;
+  color: white;
+  margin-bottom: 0px;
+  text-align: left;
+  height:100%;
+  width: 100%;
+	background: center url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='rgb(40,40,40)' viewBox='0 0 100 169.5'%3E%3Cpolygon points='50,34.75 93.5,59.75 93.5,109.75 50,134.75 6.5,109.75 6.5,59.75'%3E%3C/polygon%3E%3Cpolygon points='0,-50 43.5,-25 43.5,25 0,50 -43.5,25 -43.5,-25'%3E%3C/polygon%3E%3Cpolygon points='100,-50 143.5,-25 143.5,25 100,50 56.5,25 56.5,-25'%3E%3C/polygon%3E%3Cpolygon points='0,119.5 43.5,144.5 43.5,194.5 0,219.5 -43.5,194.5 -43.5,144.5'%3E%3C/polygon%3E%3Cpolygon points='100,119.5 143.5,144.5 143.5,194.5 100,219.5 56.5,194.5 56.5,144.5'%3E%3C/polygon%3E%3C/svg%3E");
+	background-size: 10px;
+}
+
+header{
+  position: relative;
+}
+
+header h1 {
+  margin: 0px 30px 30px 30px;
+  font-size: 100px;
+}
+
+header p {
+  position: absolute;
+  margin-top: 120px;
+  margin-left: 30px;
+  font-size: 30px;
+}
+
+svg {
+  height: 160px;
+  width: 160px;
+ }
+
+.hex {
+  stroke: white;
+  fill: transparent;
+  stroke-width: 10px;
+}
+
+.nav {
+  display: block;
+  font: 13px Helvetica, Tahoma, serif;
+  text-transform: uppercase;
+  background-color:white;
+  margin: 0px;
+  padding: 0;
+}
+
+.nav li {
+  display: inline-block;
+  list-style: none;
+}
+
+.nav .button-dropdown {
+  position: relative;
+}
+
+.nav li a {
+  display: block;
+  color: #333;
+  background-color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.nav li a span {
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 10px;
+  color: #999;
+}
+
+.nav li a:hover, .nav li a.dropdown-toggle.active {
+  background-color: slategray;
+  color: #fff;
+}
+
+.nav li a:hover span, .nav li a.dropdown-toggle.active span {
+  color: #fff;
+}
+
+.nav li .dropdown-menu {
+  display: none;
+  position: absolute;
+  left: 0;
+  padding: 0;
+  margin: 0;
+  margin-top: 3px;
+  text-align: left;
+}
+
+.nav li .dropdown-menu.active {
+  display: block;
+}
+
+.nav li .dropdown-menu a {
+  width: 150px;
+}
+
+.container {
+  display: grid;
+  float: left;
+  width: 75%;
+  padding: 2px;
   }
 
+.container .headline {
+  background: center url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='rgb(40,40,40)' viewBox='0 0 100 169.5'%3E%3Cpolygon points='50,34.75 93.5,59.75 93.5,109.75 50,134.75 6.5,109.75 6.5,59.75'%3E%3C/polygon%3E%3Cpolygon points='0,-50 43.5,-25 43.5,25 0,50 -43.5,25 -43.5,-25'%3E%3C/polygon%3E%3Cpolygon points='100,-50 143.5,-25 143.5,25 100,50 56.5,25 56.5,-25'%3E%3C/polygon%3E%3Cpolygon points='0,119.5 43.5,144.5 43.5,194.5 0,219.5 -43.5,194.5 -43.5,144.5'%3E%3C/polygon%3E%3Cpolygon points='100,119.5 143.5,144.5 143.5,194.5 100,219.5 56.5,194.5 56.5,144.5'%3E%3C/polygon%3E%3C/svg%3E");
+  background-size: 10px;
+  text-align: center;
+  font-size: 25px;
+}
+
+aside{
+  float:right;
+  width: 25%;
+  }
+
+aside .headline{
+  background: center url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='rgb(40,40,40)' viewBox='0 0 100 169.5'%3E%3Cpolygon points='50,34.75 93.5,59.75 93.5,109.75 50,134.75 6.5,109.75 6.5,59.75'%3E%3C/polygon%3E%3Cpolygon points='0,-50 43.5,-25 43.5,25 0,50 -43.5,25 -43.5,-25'%3E%3C/polygon%3E%3Cpolygon points='100,-50 143.5,-25 143.5,25 100,50 56.5,25 56.5,-25'%3E%3C/polygon%3E%3Cpolygon points='0,119.5 43.5,144.5 43.5,194.5 0,219.5 -43.5,194.5 -43.5,144.5'%3E%3C/polygon%3E%3Cpolygon points='100,119.5 143.5,144.5 143.5,194.5 100,219.5 56.5,194.5 56.5,144.5'%3E%3C/polygon%3E%3C/svg%3E");
+  background-size: 10px;
+  text-align: center;
+  font-size: 25px;
+}
+main a { 
+  text-decoration: none; 
+}
+
+section {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: wrap;
+  -ms-flex-flow: wrap;
+  flex-flow: wrap;
+  font-size: 0;
+  }
+  
+section time {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -webkit-flex: 1 1 14.2857%;
+  -ms-flex: 1;
+  flex: 1;
+  min-width: 14.2857%;
+  max-width: 14.2857vw;
+  position: relative;
+  font-size: 1.8vw;
+  line-height: 0;
+  -webkit-transition: .35s opacity;
+  transition: .35s opacity;
+  }
+
+section time.blank {
+  min-height: 14vw; 
+}
+
+section time a { 
+  display: inline-block; 
+  width: 100%; 
+  height: 100%; 
+  position: inherit;
+  border-bottom: none;
+  outline: none;
+  }
+
+section time span { 
+  position: absolute; 
+}
+
+span.caldate { 
+  top: 10%; left: 7px; 
+  z-index: 2;
+}
+
+section time.blank span.caldate {   
+  color: #333; 
+}
+
+section time a span.title { 
+  width: 100%; height: 100%;
+  line-height: 1.1;
+  left: 0; top: 0; padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 20%; opacity: 0;
+  -webkit-transition: .4s opacity;
+  transition: .4s opacity;
+}
+
+section time:hover a span.title { 
+  background: rgba(0,0,0,0.8);
+  opacity: 1;
+}
+
+section time a:hover {
+  border-bottom: none;
+}
+
+time:not(.blank) span { 
+  color: #fff; text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+}
+
+section time a img { 
+  width: 100%; 
+}
+  
+.hidden { 
+  opacity: 0; 
+}
