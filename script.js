@@ -59,4 +59,23 @@ fetch('https://accounts.spotify.com/api/token', {
       console.log(data)
     })
   
-    
+
+   //bandsintown api 
+var artistinput = document.getElementById("artistinput")
+
+function getApi() {
+  var requestUrl = "https://rest.bandsintown.com/artists/" + artistinput.value + "/events?app_id=392f3980cc0e8271628b55280c3e881a"
+  
+  fetch(requestUrl)
+  .then(function (response) {
+      return response.json();
+  })
+  .then(function (data) {
+      console.log("bandsintown data: ", data)
+  })
+  
+  
+}
+
+var okbutton = document.getElementById("OK")
+okbutton.addEventListener ('click', getApi) 
