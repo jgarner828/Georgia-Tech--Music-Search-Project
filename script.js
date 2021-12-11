@@ -55,7 +55,7 @@ function bandsintownApi() {
 // 
 function audiodbAPI() {
 
-  var requestURL = "https://theaudiodb.com/api/v1/json/523532/search.php?s=" + artistinput.value
+  var requestURL = "https://theaudiodb.com/api/v1/json/523532/search.php?s=" + artistinput.value;
   
   fetch(requestURL)
   .then(function (response) {
@@ -64,6 +64,18 @@ function audiodbAPI() {
   .then(function (data) {
       console.log("The Audio DB data: ", data)
   })
+
+  //pulling top 10 singles...
+
+  var requestURL = "https://theaudiodb.com/api/v1/json/523532/trending.php?country=us&type=itunes&format=singles";
+  fetch(requestURL)
+  .then(function (response) {
+      return response.json();
+  })
+  .then(function (data) {
+      console.log("The top 10 singles are: ", data)
+  })
+
   
 }
 
