@@ -132,8 +132,7 @@ aside{
 
   .dragcontainer {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 10px;
+    gap: 1px;
   }
   .box {
     border: 3px solid #666;
@@ -145,8 +144,7 @@ aside{
 
 section {
   border: 2px #333 solid;
-
- padding-bottom: 100px;
+  padding-bottom: 100px;
 }
 
 .inner {
