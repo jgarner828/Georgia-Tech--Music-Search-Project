@@ -9,6 +9,8 @@ body {
 	background-color: darkgoldenrod;
 }
 
+/* HEADER & NAV */
+
 .jumbotron {
   display: flex;
   color: white;
@@ -49,11 +51,10 @@ svg {
 
 .nav {
   display: block;
-  font: 13px Helvetica, Tahoma, serif;
   text-transform: uppercase;
   background-color:white;
   margin: 0px;
-  padding: 0;
+  padding-left: 30px;
 }
 
 .nav li {
@@ -107,18 +108,21 @@ svg {
   width: 150px;
 }
 
+/* BODY */
+
 .container {
   display: grid;
-  float: left;
-  width: 75%;
-  padding: 2px;
+  padding-top: 15px;
+  margin: 15px;
+  border-radius: 10px;
   }
 
-.container .headline {
+.headline {
   background: center url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='rgb(40,40,40)' viewBox='0 0 100 169.5'%3E%3Cpolygon points='50,34.75 93.5,59.75 93.5,109.75 50,134.75 6.5,109.75 6.5,59.75'%3E%3C/polygon%3E%3Cpolygon points='0,-50 43.5,-25 43.5,25 0,50 -43.5,25 -43.5,-25'%3E%3C/polygon%3E%3Cpolygon points='100,-50 143.5,-25 143.5,25 100,50 56.5,25 56.5,-25'%3E%3C/polygon%3E%3Cpolygon points='0,119.5 43.5,144.5 43.5,194.5 0,219.5 -43.5,194.5 -43.5,144.5'%3E%3C/polygon%3E%3Cpolygon points='100,119.5 143.5,144.5 143.5,194.5 100,219.5 56.5,194.5 56.5,144.5'%3E%3C/polygon%3E%3C/svg%3E");
   background-size: 10px;
   text-align: center;
   font-size: 25px;
+  border-radius: 5px;
 }
 
 aside{
@@ -126,16 +130,24 @@ aside{
   width: 25%;
   }
 
-aside .headline{
-  background: center url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='rgb(40,40,40)' viewBox='0 0 100 169.5'%3E%3Cpolygon points='50,34.75 93.5,59.75 93.5,109.75 50,134.75 6.5,109.75 6.5,59.75'%3E%3C/polygon%3E%3Cpolygon points='0,-50 43.5,-25 43.5,25 0,50 -43.5,25 -43.5,-25'%3E%3C/polygon%3E%3Cpolygon points='100,-50 143.5,-25 143.5,25 100,50 56.5,25 56.5,-25'%3E%3C/polygon%3E%3Cpolygon points='0,119.5 43.5,144.5 43.5,194.5 0,219.5 -43.5,194.5 -43.5,144.5'%3E%3C/polygon%3E%3Cpolygon points='100,119.5 143.5,144.5 143.5,194.5 100,219.5 56.5,194.5 56.5,144.5'%3E%3C/polygon%3E%3C/svg%3E");
-  background-size: 10px;
-  text-align: center;
-  font-size: 25px;
+  .dragcontainer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+  }
+  .box {
+    border: 3px solid #666;
+    background-color: #ddd;
+    border-radius: .5em;
+    padding: 10px;
+    cursor: move;
+  }
+
+section {
+  border: 2px #333 solid;
+
+ padding-bottom: 100px;
 }
->java
-var dates = document.querySelectorAll("section time.hidden");
-    var i = 1;
-    Array.prototype.forEach.call(dates, function(caldate) {
-        setTimeout(function(){ caldate.classList.remove("hidden") }, 250*i)
-        i++;
-})
+
+.inner {
+}
