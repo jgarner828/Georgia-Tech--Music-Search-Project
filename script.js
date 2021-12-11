@@ -25,35 +25,53 @@ jQuery(document).ready(function (e) {
 });
 
 //CALENDAR//
-
-
-
-/*  https://developer.spotify.com/documentation/web-api/#response-schema
-*   https://developer.spotify.com/documentation/general/guides/authorization/client-credentials/
-*   https://developer.spotify.com/dashboard/applications
-*
-*   The below code  is trying to make a POST request using the information required by spotify to grant a token. Not currently working (Justin 12/4)
-*/ 
-var client_id = 'bf2b6b1e0d444912ba9ca99426b39f16';
-var client_secret = '45870bee58304f8d975f82ff44d06d0f';
-
-// to be base 64 encoded 'bf2b6b1e0d444912ba9ca99426b39f16:45870bee58304f8d975f82ff44d06d0f'
-
-
-fetch('https://accounts.spotify.com/api/token', {
-  headers: {
-    'Authorization': 'Basic ' + 'YmYyYjZiMWUwZDQ0NDkxMmJhOWNhOTk0MjZiMzlmMTY6NDU4NzBiZWU1ODMwNGY4ZDk3NWY4MmZmNDRkMDZkMGY'
-  },
-  form: {
-    grant_type: 'client_credentials'
-  },
-  json: true
+var dates = document.querySelectorAll("section time.hidden");
+    var i = 1;
+    Array.prototype.forEach.call(dates, function(caldate) {
+        setTimeout(function(){ caldate.classList.remove("hidden") }, 250*i)
+        i++;
 })
-    .then(response => {
+
+
+
+var artistinput = document.getElementById("artistinput")
+
+
+//bandsintown api 
+function bandsintownApi() {
+  var requestUrl = "https://rest.bandsintown.com/artists/" + artistinput.value + "/events?app_id=392f3980cc0e8271628b55280c3e881a"
+  
+  fetch(requestUrl)
+  .then(function (response) {
       return response.json();
   })
-    .then(data => {
-      console.log(data)
-    })
+  .then(function (data) {
+      console.log("bandsintown data: ", data)
+  })
   
-    
+  
+}
+
+// 
+function audiodbAPI() {
+
+  var requestURL = "https://theaudiodb.com/api/v1/json/523532/search.php?s=" + artistinput.value
+  
+  fetch(requestURL)
+  .then(function (response) {
+      return response.json();
+  })
+  .then(function (data) {
+      console.log("The Audio DB data: ", data)
+  })
+  
+}
+
+
+var okbutton = document.getElementById("OK")
+okbutton.addEventListener ('click', getApi) 
+
+function getApi() {
+  bandsintownApi();
+  audiodbAPI();
+}
