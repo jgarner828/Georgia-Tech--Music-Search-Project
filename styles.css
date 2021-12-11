@@ -132,102 +132,10 @@ aside .headline{
   text-align: center;
   font-size: 25px;
 }
-main a { 
-  text-decoration: none; 
-}
-
-section {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-flow: wrap;
-  -ms-flex-flow: wrap;
-  flex-flow: wrap;
-  font-size: 0;
-  }
-  
-section time {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  -webkit-flex: 1 1 14.2857%;
-  -ms-flex: 1;
-  flex: 1;
-  min-width: 14.2857%;
-  max-width: 14.2857vw;
-  position: relative;
-  font-size: 1.8vw;
-  line-height: 0;
-  -webkit-transition: .35s opacity;
-  transition: .35s opacity;
-  }
-
-section time a { 
-  display: inline-block; 
-  width: 100%; 
-  height: 100%; 
-  position: inherit;
-  border-bottom: none;
-  outline: none;
-  }
-
-section time span { 
-  position: absolute; 
-}
-
-span.caldate { 
-  top: 10%; left: 7px; 
-  z-index: 2;
-}
-
-section time.blank span.caldate {   
-  color: #333; 
-}
-
-section time a span.title { 
-  width: 100%; height: 100%;
-  line-height: 1.1;
-  left: 0; top: 0; padding-left: 5%;
-  padding-right: 5%;
-  padding-top: 20%; opacity: 0;
-  -webkit-transition: .4s opacity;
-  transition: .4s opacity;
-}
-
-section time:hover a span.title { 
-  background: rgba(0,0,0,0.8);
-  opacity: 1;
-}
-
-section time a:hover {
-  border-bottom: none;
-}
-
-time:not(.blank) span { 
-  color: #fff; text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
-}
-
-section time a img { 
-  width: 100%; 
-}
-  
-.hidden { 
-  opacity: 0; 
-}
-
-.freshheader {
-  font-size: larger;
-  text-align: center;
-}
-
-.freshsongs {
-  
-}
-
-.songfield {
-  height: 40px;
-  width: 240px;
-  justify-content: center;
-  margin: 5px;
-  margin-left: 167px;
-}
+>java
+var dates = document.querySelectorAll("section time.hidden");
+    var i = 1;
+    Array.prototype.forEach.call(dates, function(caldate) {
+        setTimeout(function(){ caldate.classList.remove("hidden") }, 250*i)
+        i++;
+})
