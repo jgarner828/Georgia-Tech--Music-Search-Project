@@ -25,12 +25,9 @@ jQuery(document).ready(function (e) {
 });
 
 //CALENDAR//
-var dates = document.querySelectorAll("section time.hidden");
-    var i = 1;
-    Array.prototype.forEach.call(dates, function(caldate) {
-        setTimeout(function(){ caldate.classList.remove("hidden") }, 250*i)
-        i++;
-})
+
+
+
 /*  https://developer.spotify.com/documentation/web-api/#response-schema
 *   https://developer.spotify.com/documentation/general/guides/authorization/client-credentials/
 *   https://developer.spotify.com/dashboard/applications
