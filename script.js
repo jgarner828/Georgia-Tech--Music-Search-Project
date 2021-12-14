@@ -26,6 +26,14 @@ jQuery(document).ready(function (e) {
   })
 });
 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
+// 
 //FAVORITES//
 document.addEventListener('DOMContentLoaded', (event) => {
     var dragSrcEl = null;
@@ -75,20 +83,68 @@ document.addEventListener('DOMContentLoaded', (event) => {
     });
   });
 
+
+
+
+// 
+// 
+// 
+// 
 //CAROUSEL//
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.carousel');
     var instances = M.Carousel.init(elems, options);
   });
 
-  // Or with jQuery
+// Or with jQuery
 
   $(document).ready(function(){
     $('.carousel').carousel();
   });
+
+
+
+// 
+// 
+// 
+//  
+// 
+// 
+// 
+function carouselLoad() {
+  var requestUrl = "https://rest.bandsintown.com/artists/" + artistinput.value + "/events?app_id=392f3980cc0e8271628b55280c3e881a"
   
+  fetch(requestUrl)
+  .then(function (response) {
+      return response.json();
+  })
+  .then(function (data) {
+      console.log("bandsintown data: ", data)
+  })
 
 
+
+}
+
+
+// http://www.youtube.com/watch?v=CD-E-LDc384
+
+function displayCarousel(videoArray) {
+
+  for( let i  = 0; i < videoArray.length; i++) {
+    let videoCode = videoArray[i].split('=');
+    if (videoCode[1]) {
+     let URL = "https://www.youtube.com/embed/" + videoCode[1];
+     $('.carousel').append('<iframe class="carousel-item" width="420" height="315"src="' + URL + '"></iframe>');
+    }
+  }
+
+}
+
+// 
+// 
+// 
+// 
 //bandsintown api 
 function bandsintownApi() {
   var requestUrl = "https://rest.bandsintown.com/artists/" + artistinput.value + "/events?app_id=392f3980cc0e8271628b55280c3e881a"
@@ -103,31 +159,34 @@ function bandsintownApi() {
 }
 
 // 
-function audiodbAPI() {
+// 
+// 
+// 
+//  audio DB API to fetch the top 50 singles and display them...
+function topSongs() {
+  let URL = "https://theaudiodb.com/api/v1/json/523532/mostloved.php?format=track";
+  let URLarray = [];
 
-  var requestURL = "https://theaudiodb.com/api/v1/json/523532/search.php?s=" + artistinput.value;
   
-  fetch(requestURL)
+  fetch(URL)
   .then(function (response) {
       return response.json();
   })
   .then(function (data) {
-      console.log("The Audio DB data: ", data)
+    for(let i  = 0; i < data.loved.length; i++){
+      let tempURL = data.loved[i].strMusicVid;
+      if(tempURL) {
+        URLarray.push(tempURL);
+      } 
+      
+    }
+      displayCarousel(URLarray);
   })
-
-  //pulling top 10 singles...
-
-  var requestURL = "https://theaudiodb.com/api/v1/json/523532/trending.php?country=us&type=itunes&format=singles";
-  fetch(requestURL)
-  .then(function (response) {
-      return response.json();
-  })
-  .then(function (data) {
-      console.log("The top 10 singles are: ", data)
-  })
-
   
 }
+
+//run topSingles function to create array of carousel items.
+topSongs()
 
 
 var okbutton = document.getElementById("OK")
