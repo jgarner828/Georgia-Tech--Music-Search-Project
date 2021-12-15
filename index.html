@@ -24,11 +24,7 @@
       <nav>
       <ul class="nav">
         <li>
-          <input class="songfield" id = "artistinput" type="text" placeholder="City Search"/>
-          <button id= "OK" style="background-color: #333;"><i class="fas fa-angle-right"></i></button>
-        </li>
-        <li>
-          <input class="songfield" id = "artistinput" type="text" placeholder="Artist Search"/>
+          <input class="songfield" id = "artistinput" type="text" placeholder="Artist Search" style="color: #333"/>
           <button id= "OK" style="background-color: #333;"><i class="fas fa-angle-right"></i></button>
         </li>
         <li class="button-dropdown">
@@ -109,21 +105,8 @@
         <div class="row">
           <div class="col s12">
             <div class="div2 headline "> Trending Videos</div>
-            <div class="carousel">
-              
-<iframe class="carousel-item" width="420" height="315"
-src="https://www.youtube.com/embed/tgbNymZ7vqY">
-</iframe>
-
-<iframe class="carousel-item" width="420" height="315"
-src="https://www.youtube.com/embed/tgbNymZ7vqY">
-</iframe>
-
-<iframe class="carousel-item" width="420" height="315"
-src="https://www.youtube.com/embed/tgbNymZ7vqY">
-</iframe>
-
-            </div>
+            <div class="carousel"> <!--  Videos get loaded via javascript.. -->
+               </div>
           </div>
         </div>
       </section>
@@ -140,9 +123,9 @@ src="https://www.youtube.com/embed/tgbNymZ7vqY">
 
       <section class="inner">
         <div class="row">
-          <div class="col s12">
-            <div class="calendar headline"> Upcoming Events! </div>
-      
+          <div class="col s12 ">
+            <div class="calendar headline artistName"> Upcoming Events! </div>
+            <ul class = 'upcomingEvents'><!-- //this is where we want to generate the values... i think --></ul>
           </div>
         </div>
       </div>

@@ -127,7 +127,7 @@ function carouselLoad() {
 }
 
 
-// http://www.youtube.com/watch?v=CD-E-LDc384
+// http://www.youtube.com/watch?v  CD-E-LDc384
 
 function displayCarousel(videoArray) {
 
@@ -154,9 +154,23 @@ function bandsintownApi() {
       return response.json();
   })
   .then(function (data) {
-      console.log("bandsintown data: ", data)
+      upcomingEvents(data);
   })
 }
+
+
+// 
+// 
+// 
+// 
+function upcomingEvents(data) {
+  for( let i = 0; i < data.length; i++) {
+    $('.upcomingEvents').append('<li> City: ' + data[i].venue.city + '  Date: ' + data[i].datetime + '</li>');
+  }
+}
+
+
+
 
 // 
 // 
@@ -190,9 +204,10 @@ topSongs()
 
 
 var okbutton = document.getElementById("OK")
-okbutton.addEventListener ('click', getApi) 
+okbutton.addEventListener('click', getApi) 
 
 function getApi() {
+  // $('.artistName').text(artistinput.value);
   bandsintownApi();
   audiodbAPI();
 }
