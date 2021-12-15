@@ -149,7 +149,7 @@ function upcomingEvents(data) {
 
 // 
 // 
-// This function calls the audio DB API to get the top ten tracks and send them to be displayed
+// This function calls the audio DB API to get the top ten tracks and send them to be displayed in Fresh Finds section
 function artistTopTen() {
   let artist = artistinput.value;
   let URL = "https://theaudiodb.com/api/v1/json/523532/track-top10.php?s=" + artist;
