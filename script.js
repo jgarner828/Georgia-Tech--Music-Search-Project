@@ -106,28 +106,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // 
 // 
-// 
-//  
-// 
-// 
-// 
-// function carouselLoad() {
-//   var requestUrl = "https://rest.bandsintown.com/artists/" + artistinput.value + "/events?app_id=392f3980cc0e8271628b55280c3e881a"
-  
-//   fetch(requestUrl)
-//   .then(function (response) {
-//       return response.json();
-//   })
-//   .then(function (data) {
-//       console.log("bandsintown data: ", data)
-//   })
-
-
-
-// }
-
-
-
 function displayCarousel(videoArray) {
 
   for( let i  = 0; i < videoArray.length; i++) {
@@ -144,7 +122,7 @@ function displayCarousel(videoArray) {
 // 
 // 
 // 
-//bandsintown api 
+//bandsintown api pulls the events from an artist input and sends that data to the upcomingEvents function
 function bandsintownApi() {
   var requestUrl = "https://rest.bandsintown.com/artists/" + artistinput.value + "/events?app_id=392f3980cc0e8271628b55280c3e881a"
   
@@ -160,7 +138,6 @@ function bandsintownApi() {
 
 // 
 // 
-// 
 // This function appends the Upcoming Events list with data from the Bands in Town API
 function upcomingEvents(data) {
   for( let i = 0; i < data.length; i++) {
@@ -169,8 +146,7 @@ function upcomingEvents(data) {
 }
 
 
-// 
-// 
+
 // 
 // 
 // This function calls the audio DB API to get the top ten tracks and send them to be displayed
@@ -197,7 +173,7 @@ function artistTopTen() {
 // 
 // 
 // 
-//  audio DB API to fetch the top 50 singles and display them...
+//  This function calls the audio DB API to fetch the top 50 singles and sends them to displayCarousel function to be displayed.
 function topSongs() {
   let URL = "https://theaudiodb.com/api/v1/json/523532/mostloved.php?format=track";
   let URLarray = [];
