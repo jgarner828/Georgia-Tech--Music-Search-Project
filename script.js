@@ -161,7 +161,7 @@ function artistTopTen() {
   .then(function (data) {
     console.log(data);
     for(let i = 0; i < data.track.length; i++){
-      console.log('<a href=\"' + data.track[i].strMusicVid + '\">' + data.track[i].strTrack + '</a>');
+      $('.songs').append('<li><a href=\"' + data.track[i].strMusicVid + '\">' + data.track[i].strTrack + '</a></li>');
     }
   })
 }
