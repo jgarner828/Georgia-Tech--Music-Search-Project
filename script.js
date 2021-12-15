@@ -127,7 +127,6 @@ function carouselLoad() {
 }
 
 
-// http://www.youtube.com/watch?v  CD-E-LDc384
 
 function displayCarousel(videoArray) {
 
@@ -162,11 +161,33 @@ function bandsintownApi() {
 // 
 // 
 // 
-// 
+// This function appends the Upcoming Events list with data from the Bands in Town API
 function upcomingEvents(data) {
   for( let i = 0; i < data.length; i++) {
     $('.upcomingEvents').append('<li> City: ' + data[i].venue.city + '  Date: ' + data[i].datetime + '</li>');
   }
+}
+
+
+// 
+// 
+// 
+// 
+// This function calls the audio DB API to get the top ten tracks and send them to be displayed
+function artistTopTen() {
+  let artist = artistinput.value;
+  let URL = "https://theaudiodb.com/api/v1/json/523532/track-top10.php?s=" + artist;
+  
+  fetch(URL)
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    console.log(data);
+    for(let i = 0; i < data.track.length; i++){
+      console.log('<a href=\"' + data.track[i].strMusicVid + '\">' + data.track[i].strTrack + '</a>');
+    }
+  })
 }
 
 
@@ -209,5 +230,5 @@ okbutton.addEventListener('click', getApi)
 function getApi() {
   // $('.artistName').text(artistinput.value);
   bandsintownApi();
-  audiodbAPI();
+  artistTopTen();
 }
