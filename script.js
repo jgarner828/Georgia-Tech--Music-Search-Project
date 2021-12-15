@@ -111,20 +111,20 @@ document.addEventListener('DOMContentLoaded', function() {
 // 
 // 
 // 
-function carouselLoad() {
-  var requestUrl = "https://rest.bandsintown.com/artists/" + artistinput.value + "/events?app_id=392f3980cc0e8271628b55280c3e881a"
+// function carouselLoad() {
+//   var requestUrl = "https://rest.bandsintown.com/artists/" + artistinput.value + "/events?app_id=392f3980cc0e8271628b55280c3e881a"
   
-  fetch(requestUrl)
-  .then(function (response) {
-      return response.json();
-  })
-  .then(function (data) {
-      console.log("bandsintown data: ", data)
-  })
+//   fetch(requestUrl)
+//   .then(function (response) {
+//       return response.json();
+//   })
+//   .then(function (data) {
+//       console.log("bandsintown data: ", data)
+//   })
 
 
 
-}
+// }
 
 
 
@@ -164,7 +164,7 @@ function bandsintownApi() {
 // This function appends the Upcoming Events list with data from the Bands in Town API
 function upcomingEvents(data) {
   for( let i = 0; i < data.length; i++) {
-    $('.upcomingEvents').append('<li> City: ' + data[i].venue.city + '  Date: ' + data[i].datetime + '</li>');
+    $('.upcomingEvents').append('<li> City:    ' + data[i].venue.city + '  Date:     ' + data[i].datetime + '</li>');
   }
 }
 
