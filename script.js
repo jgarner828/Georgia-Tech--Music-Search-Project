@@ -96,11 +96,11 @@ document.addEventListener('DOMContentLoaded', function() {
     var instances = M.Carousel.init(elems, options);
   });
 
-// Or with jQuery
+// // Or with jQuery
 
-  $(document).ready(function(){
-    $('.carousel').carousel();
-  });
+//   $(document).ready(function(){
+//     $('.carousel').carousel();
+//   });
 
 
 
@@ -140,6 +140,7 @@ function bandsintownApi() {
 // 
 // This function appends the Upcoming Events list with data from the Bands in Town API
 function upcomingEvents(data) {
+  $('.upcomingEvents').empty();
   for( let i = 0; i < data.length; i++) {
     $('.upcomingEvents').append('<li> City:    ' + data[i].venue.city + '  Date:     ' + data[i].datetime + '</li>');
   }
@@ -151,6 +152,8 @@ function upcomingEvents(data) {
 // 
 // This function calls the audio DB API to get the top ten tracks and send them to be displayed in Fresh Finds section
 function artistTopTen() {
+
+  $('.songs').empty();
   let artist = artistinput.value;
   let URL = "https://theaudiodb.com/api/v1/json/523532/track-top10.php?s=" + artist;
   
@@ -159,15 +162,11 @@ function artistTopTen() {
     return response.json();
   })
   .then(function (data) {
-    console.log(data);
     for(let i = 0; i < data.track.length; i++){
       $('.songs').append('<li><a href=\"' + data.track[i].strMusicVid + '\">' + data.track[i].strTrack + '</a></li>');
     }
   })
 }
-
-
-
 
 // 
 // 
@@ -196,6 +195,19 @@ function topSongs() {
   
 }
 
+
+
+
+// 
+// 
+// 
+// this function fills the local storage.
+
+
+
+
+
+
 //run topSingles function to create array of carousel items.
 topSongs()
 
@@ -204,7 +216,6 @@ var okbutton = document.getElementById("OK")
 okbutton.addEventListener('click', getApi) 
 
 function getApi() {
-  // $('.artistName').text(artistinput.value);
   bandsintownApi();
   artistTopTen();
 }
