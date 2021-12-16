@@ -202,6 +202,31 @@ function topSongs() {
 // 
 // 
 // this function fills the local storage.
+function yourFaves(input) {
+
+  let favArtists = localStorage.getItem('favArtists');
+  let artistArray = [];
+
+
+  if (favArtists === null) {
+    artistArray[0] = input;
+    let artistLocal = JSON.stringify(artistArray);
+    localStorage.setItem('favArtists', artistLocal)
+    return;
+
+  } else {
+    artistArray = JSON.parse(favArtists);
+    
+    if (artistArray.includes(input)) {
+      return;
+    }
+    artistArray.push(input);
+    let artistLocal = JSON.stringify(artistArray);
+    localStorage.setItem('favArtists', artistLocal);
+    return;
+  }
+}
+
 
 
 
