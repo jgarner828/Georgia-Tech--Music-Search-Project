@@ -106,7 +106,7 @@ svg {
 /* BODY */
 body {
   margin: 0px;
-	background-color: darkgoldenrod;
+	background-color: #b8860b;
 }
 
 
@@ -130,8 +130,17 @@ aside{
   width: 25%;
   }
 
+aside p{
+  margin: 5px;
+  text-align: center;
+}
+.fill {
+  background: url(img_tree.gif) left top no-repeat, url(img_flwr.gif) right bottom no-repeat, url(paper.gif) left top repeat;
+  padding: 15px;
+  background-size: 50px, 130px, auto;
+}
   .dragcontainer {
-    display: grid;
+    display: none;
     gap: 1px;
   }
   .box {
