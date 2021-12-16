@@ -241,6 +241,13 @@ var okbutton = document.getElementById("OK")
 okbutton.addEventListener('click', getApi) 
 
 function getApi() {
+  
+  if($(".favorites:checkbox")) {
+    yourFaves(artistinput.value);
+  }
+
   bandsintownApi();
   artistTopTen();
+
+  
 }
