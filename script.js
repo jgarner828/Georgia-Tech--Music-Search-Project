@@ -208,28 +208,32 @@ function topSongs() {
       return;
 
     } else {
-      artistArray = JSON.parse(favArtists);
-    
-      if (artistArray.includes(input)) {
+        artistArray = JSON.parse(favArtists);
+      
+        if (artistArray.includes(input)) {
+          return;
+        }
+        artistArray.push(input);
+        let artistLocal = JSON.stringify(artistArray);
+        localStorage.setItem('favArtists', artistLocal);
         return;
       }
-      artistArray.push(input);
-      let artistLocal = JSON.stringify(artistArray);
-      localStorage.setItem('favArtists', artistLocal);
-      return;
-    }
 
   }
 
 
 
 function favSection() {
+
     let favs = localStorage.getItem('favArtists');
+    if (!favs){
+      return;
+    }
     let favsArray = [];
     favsArray = JSON.parse(favs);
-    for (let i = 0; i < favsArray.length; i++) {
-      $('.favorites').append('<li>' + favsArray[i] + '</li>');
-    }
+     for (let i = 0; i < favsArray.length; i++) {
+       $('.favorites').append('<li>' + favsArray[i] + '</li>');
+     }
     
 }
 
@@ -248,7 +252,7 @@ var okbutton = document.getElementById("OK")
 okbutton.addEventListener('click', getApi) 
 
 function getApi() {
-  
+
     if($(".favorites:checkbox")) {
  
       addFaves(artistinput.value);
