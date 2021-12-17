@@ -202,7 +202,7 @@ function topSongs() {
 // 
 // 
 // this function fills the local storage.
-function yourFaves(input) {
+function addFaves(input) {
 
   let favArtists = localStorage.getItem('favArtists');
   let artistArray = [];
@@ -228,7 +228,15 @@ function yourFaves(input) {
 }
 
 
+function favorites() {
+  let favArtists = localStorage.getItem('favArtists');
+  let artistArray = [];
+  artistArray = JSON.parse(favArtists);
 
+  for(let i = 0; i < artistArray.length; i++) {
+    $('.favorites').append('<li>' + artistArray[i] + '</li>');
+  }
+}
 
 
 
@@ -237,13 +245,17 @@ function yourFaves(input) {
 topSongs()
 
 
+// run the favorites section to create list items..
+favorites() 
+
+
 var okbutton = document.getElementById("OK")
 okbutton.addEventListener('click', getApi) 
 
 function getApi() {
   
   if($(".favorites:checkbox")) {
-    yourFaves(artistinput.value);
+    addFaves(artistinput.value);
   }
 
   bandsintownApi();
