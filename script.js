@@ -238,7 +238,7 @@ function favorites() {
   artistArray = JSON.parse(favArtists);
 
   for(let i = 0; i < artistArray.length; i++) {
-    $('.favorites').append('<li>' + artistArray[i] + '</li>');
+    $('.favorites').append('<li id>' + artistArray[i] + '</li>');
   }
 }
 
