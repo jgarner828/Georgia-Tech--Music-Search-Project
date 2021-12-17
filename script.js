@@ -195,45 +195,45 @@ function topSongs() {
 // 
 // 
 // this function fills the local storage.
-// function addFaves(input) {
+//  function addFaves(input) {
 
-//   let favArtists = localStorage.getItem('favArtists');
-//   let artistArray = [];
+//    let favArtists = localStorage.getItem('favArtists');
+//    let artistArray = [];
 
 
-//   if (favArtists === null) {
-//     artistArray[0] = input;
-//     let artistLocal = JSON.stringify(artistArray);
-//     localStorage.setItem('favArtists', artistLocal)
-//     return;
+//    if (favArtists === null) {
+//      artistArray[0] = input;
+//      let artistLocal = JSON.stringify(artistArray);
+//      localStorage.setItem('favArtists', artistLocal)
+//      return;
 
-//   } else {
-//     artistArray = JSON.parse(favArtists);
+//    } else {
+//      artistArray = JSON.parse(favArtists);
     
-//     if (artistArray.includes(input)) {
-//       return;
-//     }
-//     artistArray.push(input);
-//     let artistLocal = JSON.stringify(artistArray);
-//     localStorage.setItem('favArtists', artistLocal);
-//     return;
-//   }
+//      if (artistArray.includes(input)) {
+//        return;
+//      }
+//      artistArray.push(input);
+//      let artistLocal = JSON.stringify(artistArray);
+//      localStorage.setItem('favArtists', artistLocal);
+//      return;
+//    }
 
-//   $('.favorites').empty();
-//   favorites();
-//   return;
-// }
+//    $('.favorites').empty();
+//    favoriteArtists();
+//    return;
+//  }
 
 
-// function favorites() {
-//   let favArtists = localStorage.getItem('favArtists');
-//   let artistArray = [];
-//   artistArray = JSON.parse(favArtists);
+//  function favorites() {
+//    let favArtists = localStorage.getItem('favArtists');
+//    let artistArray = [];
+//    artistArray = JSON.parse(favArtists);
 
-//   for(let i = 0; i < artistArray.length; i++) {
-//     $('.favorites').append('<li id>' + artistArray[i] + '</li>');
-//   }
-// }
+//    for(let i = 0; i < artistArray.length; i++) {
+//      $('.favorites').append('<li id>' + artistArray[i] + '</li>');
+//    }
+//  }
 
 
 
@@ -242,8 +242,8 @@ function topSongs() {
 topSongs()
 
 
-// run the favorites section to create list items..
-// favorites() 
+ //run the favorites section to create list items..
+//  favoriteArtists() 
 
 
 var okbutton = document.getElementById("OK")
@@ -251,9 +251,9 @@ okbutton.addEventListener('click', getApi)
 
 function getApi() {
   
-  // if($(".favorites:checkbox")) {
-  //   addFaves(artistinput.value);
-  // }
+  //  if($(".favorites:checkbox")) {
+  //    addFaves(artistinput.value);
+  //  }
 
   bandsintownApi();
   artistTopTen();
