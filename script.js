@@ -92,9 +92,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
 
-<<<<<<< HEAD
-//
-=======
 // // Or with jQuery
 
 //   $(document).ready(function(){
@@ -105,7 +102,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 // 
 // 
->>>>>>> d04f1f5afeff53cfa85849cf7a2d9b7aff3226f9
 function displayCarousel(videoArray) {
 
   for( let i  = 0; i < videoArray.length; i++) {
@@ -141,15 +137,10 @@ function bandsintownApi() {
 function upcomingEvents(data) {
   $('.upcomingEvents').empty();
   for( let i = 0; i < data.length; i++) {
-    $('.upcomingEvents').append('<p>' + data[i].venue.city + '</p>')
+    $('.upcomingEvents').append('<li>' + data[i].venue.city + '</p>' + data[i].datetime + '</li>')
   }
 }
 
-function upcomingEventsDate(data) {
-  for( let i = 0; i < data.length; i++) {
-    $('.upcomingEventsDate').append('<p>' + data[i].datetime + '</p>');
-  }
-}
 
 // 
 // 
@@ -198,8 +189,6 @@ function topSongs() {
 }
 
 
-<<<<<<< HEAD
-=======
 
 
 // 
@@ -249,7 +238,6 @@ function topSongs() {
 
 
 
->>>>>>> d04f1f5afeff53cfa85849cf7a2d9b7aff3226f9
 //run topSingles function to create array of carousel items.
 topSongs()
 
