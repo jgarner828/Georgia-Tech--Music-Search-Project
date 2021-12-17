@@ -225,6 +225,10 @@ function addFaves(input) {
     localStorage.setItem('favArtists', artistLocal);
     return;
   }
+
+  $('.favorites').empty();
+  favorites();
+  return;
 }
 
 
