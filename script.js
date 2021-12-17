@@ -26,14 +26,19 @@ jQuery(document).ready(function (e) {
   })
 });
 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
+
+
+
+
+//ARTISTS TOP 10 SONGS TABLE//
+$(window).on("load resize ", function() {
+  var scrollWidth = $('.tbl-content').width() - $('.tbl-content table').width();
+  $('.tbl-header').css({'padding-right':scrollWidth});
+}).resize();
+
+
+
+
 //FAVORITES//
 document.addEventListener('DOMContentLoaded', (event) => {
     var dragSrcEl = null;
@@ -86,16 +91,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
 
-// 
-// 
-// 
-// 
-//CAROUSEL//
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.carousel');
-    var instances = M.Carousel.init(elems, options);
-  });
 
+<<<<<<< HEAD
+//
+=======
 // // Or with jQuery
 
 //   $(document).ready(function(){
@@ -106,16 +105,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // 
 // 
+>>>>>>> d04f1f5afeff53cfa85849cf7a2d9b7aff3226f9
 function displayCarousel(videoArray) {
 
   for( let i  = 0; i < videoArray.length; i++) {
     let videoCode = videoArray[i].split('=');
     if (videoCode[1]) {
      let URL = "https://www.youtube.com/embed/" + videoCode[1];
-     $('.carousel').append('<iframe class="carousel-item" width="420" height="315"src="' + URL + '"></iframe>');
+     $('.carouselVideos').append('<iframe class="carousel-item" width="420" height="315"src="' + URL + '"></iframe>');
     }
   }
-
 }
 
 // 
@@ -142,15 +141,19 @@ function bandsintownApi() {
 function upcomingEvents(data) {
   $('.upcomingEvents').empty();
   for( let i = 0; i < data.length; i++) {
-    $('.upcomingEvents').append('<li> City:    ' + data[i].venue.city + '  Date:     ' + data[i].datetime + '</li>');
+    $('.upcomingEvents').append('<p>' + data[i].venue.city + '</p>')
   }
 }
 
-
+function upcomingEventsDate(data) {
+  for( let i = 0; i < data.length; i++) {
+    $('.upcomingEventsDate').append('<p>' + data[i].datetime + '</p>');
+  }
+}
 
 // 
 // 
-// This function calls the audio DB API to get the top ten tracks and send them to be displayed in Fresh Finds section
+// This function calls the audio DB API to get the top ten tracks and send them to be displayed in Top Songs section
 function artistTopTen() {
 
   $('.songs').empty();
@@ -192,10 +195,11 @@ function topSongs() {
     }
       displayCarousel(URLarray);
   })
-  
 }
 
 
+<<<<<<< HEAD
+=======
 
 
 // 
@@ -245,6 +249,7 @@ function topSongs() {
 
 
 
+>>>>>>> d04f1f5afeff53cfa85849cf7a2d9b7aff3226f9
 //run topSingles function to create array of carousel items.
 topSongs()
 

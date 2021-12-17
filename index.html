@@ -76,10 +76,15 @@
         <section>
           <div class="row">
             <div class="col s12">
+<<<<<<< HEAD
+              <div class="topsongs headline"> Top Songs</div>
+              <ul class=songs>
+=======
               <div class="freshfinds headline"> Top 10</div>
                   <ul class='songs'>
+>>>>>>> d04f1f5afeff53cfa85849cf7a2d9b7aff3226f9
 
-                  </ul>
+              </ul>            
                 </div>
               </div>
             </div>
@@ -87,14 +92,34 @@
 
 <!---UPCOMING EVENTS--->
       <div class="container">
-      <section class="inner">
+      <section>
         <div class="row">
           <div class="col s12 ">
             <div class="calendar headline artistName"> Upcoming Events!</div>
-            <div class="fill">
-            
-            <ul class = 'upcomingEvents'>
-            </ul>
+            <div class="tbl-header">
+              <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
+                  <tr>
+                    <th>City</th>
+                    <th>Date / Time</th>
+                  </tr>
+                </thead>
+              </table>
+            </div>
+            <div class="tbl-content">
+              <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                  <tr>
+                    <td>
+                      <p class='upcomingEvents'></p>
+                    </td>
+                    <td>
+                      <p class='upcomingEventsDate'></p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
           </div>
           </div>
         </div>
@@ -103,21 +128,22 @@
 
 <!---MUSIC VIDEOS--->
       <div class="container">
-      <section class="inner">
+      <section class>
         <div class="row">
           <div class="col s12">
             <div class="videos headline "> Trending Videos</div>
-            <div class="carousel"> <!--  Videos get loaded via javascript.. -->
+            <div class="carouselVideos"> <!--  Videos get loaded via javascript.. -->
                </div>
           </div>
         </div>
       </section>
+    </body>
 
 <!---SCRIPT LINKS--->
   <script type="text/javascript" src="js/materialize.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="script.js"></script>
-</body>
+
 
 </html>
