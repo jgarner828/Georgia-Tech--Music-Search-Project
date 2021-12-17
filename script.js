@@ -92,7 +92,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
 
+<<<<<<< HEAD
 //
+=======
+// // Or with jQuery
+
+//   $(document).ready(function(){
+//     $('.carousel').carousel();
+//   });
+
+
+
+// 
+// 
+>>>>>>> d04f1f5afeff53cfa85849cf7a2d9b7aff3226f9
 function displayCarousel(videoArray) {
 
   for( let i  = 0; i < videoArray.length; i++) {
@@ -126,6 +139,7 @@ function bandsintownApi() {
 // 
 // This function appends the Upcoming Events list with data from the Bands in Town API
 function upcomingEvents(data) {
+  $('.upcomingEvents').empty();
   for( let i = 0; i < data.length; i++) {
     $('.upcomingEvents').append('<p>' + data[i].venue.city + '</p>')
   }
@@ -141,6 +155,8 @@ function upcomingEventsDate(data) {
 // 
 // This function calls the audio DB API to get the top ten tracks and send them to be displayed in Top Songs section
 function artistTopTen() {
+
+  $('.songs').empty();
   let artist = artistinput.value;
   let URL = "https://theaudiodb.com/api/v1/json/523532/track-top10.php?s=" + artist;
   
@@ -149,15 +165,11 @@ function artistTopTen() {
     return response.json();
   })
   .then(function (data) {
-    console.log(data);
     for(let i = 0; i < data.track.length; i++){
       $('.songs').append('<li><a href=\"' + data.track[i].strMusicVid + '\">' + data.track[i].strTrack + '</a></li>');
     }
   })
 }
-
-
-
 
 // 
 // 
@@ -186,15 +198,77 @@ function topSongs() {
 }
 
 
+<<<<<<< HEAD
+=======
+
+
+// 
+// 
+// 
+// this function fills the local storage.
+function addFaves(input) {
+
+  let favArtists = localStorage.getItem('favArtists');
+  let artistArray = [];
+
+
+  if (favArtists === null) {
+    artistArray[0] = input;
+    let artistLocal = JSON.stringify(artistArray);
+    localStorage.setItem('favArtists', artistLocal)
+    return;
+
+  } else {
+    artistArray = JSON.parse(favArtists);
+    
+    if (artistArray.includes(input)) {
+      return;
+    }
+    artistArray.push(input);
+    let artistLocal = JSON.stringify(artistArray);
+    localStorage.setItem('favArtists', artistLocal);
+    return;
+  }
+
+  $('.favorites').empty();
+  favorites();
+  return;
+}
+
+
+function favorites() {
+  let favArtists = localStorage.getItem('favArtists');
+  let artistArray = [];
+  artistArray = JSON.parse(favArtists);
+
+  for(let i = 0; i < artistArray.length; i++) {
+    $('.favorites').append('<li id>' + artistArray[i] + '</li>');
+  }
+}
+
+
+
+
+>>>>>>> d04f1f5afeff53cfa85849cf7a2d9b7aff3226f9
 //run topSingles function to create array of carousel items.
 topSongs()
+
+
+// run the favorites section to create list items..
+favorites() 
 
 
 var okbutton = document.getElementById("OK")
 okbutton.addEventListener('click', getApi) 
 
 function getApi() {
-  // $('.artistName').text(artistinput.value);
+  
+  if($(".favorites:checkbox")) {
+    addFaves(artistinput.value);
+  }
+
   bandsintownApi();
   artistTopTen();
+
+  
 }

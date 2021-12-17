@@ -30,7 +30,9 @@
       <ul class="nav">
         <li>
           <input class="songfield" id = "artistinput" type="text" placeholder="Artist Search" style="color: #333"/>
-          <button id= "OK" style="background-color: #333;"><i class="fas fa-angle-right"></i></button>
+          <button id= "OK" style="background-color: #333;"><i class="fas fa-angle-left"></i></button>
+          <input type="checkbox" id="favorites">
+          <label for="favorites" style="color: #333;">Add to favorites</label>
         </li>
         <li class="button-dropdown">
           <a href="javascript:void(0)" class="dropdown-toggle">
@@ -62,11 +64,7 @@
         <div class="container">
           <section>
             <div class="faves headline"> Your Faves</div>
-            <p>Coming Soon!!</p>
-            <div class="dragcontainer">
-              <div draggable="true" class="box">PLACEHOLDER1</div>
-              <div draggable="true" class="box">PLACEHOLDER2</div>
-              <div draggable="true" class="box">PLACEHOLDER3</div>
+              <ul class="favorites"></ul>
             </div>
           </section>
         </div>
@@ -78,8 +76,13 @@
         <section>
           <div class="row">
             <div class="col s12">
+<<<<<<< HEAD
               <div class="topsongs headline"> Top Songs</div>
               <ul class=songs>
+=======
+              <div class="freshfinds headline"> Top 10</div>
+                  <ul class='songs'>
+>>>>>>> d04f1f5afeff53cfa85849cf7a2d9b7aff3226f9
 
               </ul>            
                 </div>
